@@ -15,10 +15,8 @@ const route = express();
 route.get('/veiculos', getAllVehicles);
 route.post('/veiculos', createVehicle);
 
-route.use(validateId);
-
-route.get('veiculos/:id', getVehicle);
-route.put('veiculos/:id', updateVehicle);
-route.delete('veiculos/:id', deleteVehicle);
+route.get('/veiculos/:id', validateId, getVehicle);
+route.put('/veiculos/:id', validateId, updateVehicle);
+route.delete('/veiculos/:id', validateId, deleteVehicle);
 
 module.exports = route;
