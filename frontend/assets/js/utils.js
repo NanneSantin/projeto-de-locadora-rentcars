@@ -25,8 +25,8 @@ function createTableRow(vehicle) {
     });
 
     const actionsCell = document.createElement('td');
-    const detalharButton = createButton('Detalhar', () => detalharVeiculo(vehicle));
-    const deletarButton = createButton('Deletar', () => deleteVehicle(vehicle.id));
+    const detalharButton = createButton('Detalhar', () => detailVehicle(vehicle));
+    const deletarButton = createButton('Deletar', () => removeVehicle(vehicle.id));
 
     actionsCell.appendChild(detalharButton);
     actionsCell.appendChild(deletarButton);
@@ -44,19 +44,21 @@ function createButton(label, clickHandler) {
     return button;
 }
 
-async function deleteVehicle(vehicleId) {
+async function removeVehicle(vehicleId) {
     try {
         const response = await fetch(`http://localhost:3000/veiculos/${vehicleId}`, { method: 'DELETE' });
 
         if (response.status === 204) {
             messageError('Sucesso', 'Veículo removido com sucesso!');
+        } else {
+            messageError('Erro Interno', 'Erro interno do servidor. <br> Não foi possível detalhar este veículo!');
         }
     } catch (error) {
         messageError('Erro Interno', 'Erro interno do servidor. <br> Não foi possível detalhar este veículo!');
     }
 }
 
-function detalharVeiculo(data) {
+function detailVehicle(data) {
     const popup = window.open('', 'Popup', 'width=500,height=450');
 
     fetch('./assets/html/detailTemplate.html').then(response => response.text()).then(html => {

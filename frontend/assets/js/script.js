@@ -25,17 +25,13 @@ document.addEventListener('DOMContentLoaded', () => {
       });
 
       if (response.status === 201) {
-
-        const titulo = 'Sucesso';
-        const mensagem = 'Veículo cadastrado com sucesso!'
-
-        messageError(titulo, mensagem);
+        messageError('Sucesso', 'Veículo cadastrado com sucesso!');
+      } else {
+        messageError('Erro Interno', 'Erro interno do servidor. <br> Veículo não cadastrado!');
       }
-    } catch (error) {
-      const titulo = 'Erro Interno';
-      const mensagem = 'Erro interno do servidor. <br> Veículo não cadastrado!'
 
-      messageError(titulo, mensagem);
+    } catch (error) {
+      messageError('Erro Interno', 'Erro interno do servidor. <br> Veículo não cadastrado!');
     }
   });
 });
@@ -54,12 +50,12 @@ document.addEventListener('DOMContentLoaded', () => {
       if (response.status === 200) {
         const data = await response.json();
         updateTable(data);
+      } else {
+        messageError('Erro Interno', 'Erro interno do servidor. <br> Não foi possível atualizar a lista!');
       }
-    } catch (error) {
-      const titulo = 'Erro Interno';
-      const mensagem = 'Erro interno do servidor. <br> Não foi possível atualizar a lista!'
 
-      messageError(titulo, mensagem);
+    } catch (error) {
+      messageError('Erro Interno', 'Erro interno do servidor. <br> Não foi possível atualizar a lista!');
     }
   });
 });
