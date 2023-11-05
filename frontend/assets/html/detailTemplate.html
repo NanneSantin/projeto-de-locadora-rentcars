@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veículo {{modelo}} | {{locadora}}</title>
+    <!DOCTYPE html>
+    <style>
+        body {
+            font-family: Helvetica, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        #vehicle-details {
+            width: 400px;
+            height: auto;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            font-size: 24px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        p {
+            font-size: 16px;
+            margin: 10px 0;
+        }
+
+        #closeButton {
+            margin: 20px 0 0 180px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="vehicle-details">
+        <h1>Detalhes do Veículo</h1>
+        <p><strong>ID:</strong> {{id}}</p>
+        <p><strong>Locadora:</strong> {{locadora}}</p>
+        <p><strong>Modelo:</strong> {{modelo}}</p>
+        <p><strong>Marca:</strong> {{marca}}</p>
+        <p><strong>Motor:</strong> {{motor}}</p>
+        <p><strong>Ar-Condicionado:</strong> {{ar}}</p>
+        <p><strong>Câmbio:</strong> {{cambio}}</p>
+        <p><strong>Portas:</strong> {{portas}}</p>
+        <p><strong>Ano:</strong> {{ano}}</p>
+        <button id="closeButton">OK</button>
+    </div>
+    <script>
+        document.getElementById("closeButton").addEventListener("click", () => {
+            window.close();
+        });
+    </script>
+</body>
+
+</html>

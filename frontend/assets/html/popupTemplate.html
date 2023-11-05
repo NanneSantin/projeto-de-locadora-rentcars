@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{titulo}}</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            height: auto;
+            font-family: Helvetica, sans-serif;
+        }
+
+        #popup {
+            width: 400px;
+            height: auto;
+            background-color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        #closeButton {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="popup">
+        <h2>{{mensagem}}</h2>
+        <button id="closeButton">OK</button>
+    </div>
+    <script>
+        document.getElementById("closeButton").addEventListener("click", () => {
+            window.close();
+        });
+    </script>
+</body>
+
+</html>
