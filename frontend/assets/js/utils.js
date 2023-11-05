@@ -59,7 +59,7 @@ async function deleteVehicle(vehicleId) {
 function detalharVeiculo(data) {
     const popup = window.open('', 'Popup', 'width=500,height=450');
 
-    fetch('./frontend/assets/html/detailTemplate.html').then(response => response.text()).then(html => {
+    fetch('./assets/html/detailTemplate.html').then(response => response.text()).then(html => {
         const htmlComValores = html
             .replace('{{id}}', data.id)
             .replace('{{locadora}}', data.locadora)
@@ -79,7 +79,7 @@ function detalharVeiculo(data) {
 
 export function messageError(titulo, mensagem) {
     const popup = window.open('', 'Popup', 'width=400,height=200');
-    fetch('./frontend/assets/html/popupTemplate.html')
+    fetch('./assets/html/popupTemplate.html')
         .then(response => response.text())
         .then(html => {
             const htmlComValores = html.replace('{{titulo}}', titulo).replace('{{mensagem}}', mensagem);
