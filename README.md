@@ -112,8 +112,7 @@ Veja as orientações em: [Variáveis de Ambiente](#variáveis-de-ambiente)
 
 ## Demonstração
 
-<a href="https://imgur.com/mwCMxfa"><img src="https://i.imgur.com/mwCMxfa.gif" title="source: imgur.com" /></a>
-
+![demonstracao](https://imgur.com/mwCMxfa)
 
 ## Documentação da API
 
